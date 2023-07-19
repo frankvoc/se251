@@ -19,7 +19,7 @@
         var h = 100;
         var vx = 5
         var vy = 5
-        var color = `rgb(255,${Math.round(Math.random()*255)},0)`;
+        var color = 'rgb(32,155,200)'
         function main()
         {
             ctx.clearRect(0,0,c.width,c.height);
@@ -33,13 +33,9 @@
             if (x < 0)
             {  vx=-vx  }
             if (y < 0)
-            { vy = -vy
-            
-                
-            }
+            { vy = -vy }
             if (y>c.height-h){ 
                 vy = -vy
-                color = `rgb(155,44,122)`
             }
             ctx.fillStyle = color
             ctx.fillRect(x,y,w,h)
