@@ -73,8 +73,8 @@ function main()
     }
     if(ball.collide(p2))
     {
-        ball.x = p2.x + p2.w/2 +ball.w/2
-        ball.vx = ball.vx;
+        ball.x = p2.x - p2.w/2 -ball.w/2
+        ball.vx = -ball.vx;
     }
     if (ball.x < 0)
     {
