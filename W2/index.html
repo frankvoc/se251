@@ -8,13 +8,70 @@
 </head>
 <body>
     <script>
+        class People
+        {
+            constructor(fname=`larry`, lname=`jones`,age = 10,height=`8'2"`)
+            {
+                this.name
+                this.age=age;
+                this.height=height;
+            }
+            setProps(obj)
+            {
+                for(let props in obj)
+                {
+                    if(this[props]!= undefined)
+                    {
+                        this[props]=obj[props]
+                    }
+                }
+                return this;
+            }
+        }
+        var me = new People()
+        console.log(me.setProps({height:12}))
+      
         var namo = []
         namo[0] = "jay"
         namo[1] = "jordan"
         namo[2] = "marty"
         namo[3] = "name"
-        console.log(namo) 
-        document.querySelector(`body`)       
+        console.log(namo)
+        var message =``
+        for(let i=0; i<namo.length; i++)
+        {
+            message+= `<p>`
+            message += namo[i]
+            message += `<p>`
+        } 
+        document.querySelector(`body`).innerHTML = message
+
+        var person =[
+            {
+            fname : `bobby`,
+            lname : `brown`,
+            hair : `brown`,
+            height : `6`,
+            },
+            {
+            fname : `whit`,
+            lname : `worth`,
+            hair : `green`,
+            height : `7`,
+            },  
+        ]
+
+        
+        var body = document.querySelector(`body`);
+        var message = ``;
+        for(let i in person[0])
+        {
+            console.log(person[0][i])
+        }
+        for(let i =0; i < person.length;i++);
+        {
+            message += `<p>${person[i].fname} ${people[i].lname}</p`
+        }
     </script>
 </body>
 </html>

@@ -2,6 +2,7 @@ var c = document.querySelector(`#pong`)
 var ctx = c.getContext(`2d`)
 var timer = setInterval(main, 1000/60)
 
+
 var fy = .85
 
 var p1 = new Box();
@@ -16,9 +17,9 @@ p2.x = 780 + p2.w/2
 var ball = new Box();
 ball.w=20
 ball.h=20
-ball.vx=-2
-ball.vy = -2
-ball.color= "white"
+ball.vx=-3
+ball.vy = -3    
+ball.color= "blue"
 
 
 
