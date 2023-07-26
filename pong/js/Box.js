@@ -1,7 +1,8 @@
 class Box
 {
     constructor()
-    {
+    {   
+        
         this.x = c.width/2
         this.y = c.height/2
         this.w = 100
