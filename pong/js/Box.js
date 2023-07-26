@@ -7,7 +7,7 @@ class Box
         this.w = 100
         this.h = 100
         
-        this.color = `hotpink`
+        this.color = `white`
         this.vx = 0
         this.vy = 0
         this.force =1;
