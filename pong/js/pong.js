@@ -28,19 +28,19 @@ ball.color= "blue"
 function main()
 {
     ctx.clearRect(0,0,c.width,c.height)
-    if (keys[`w`])
+    if (keys[`ArrowUp`])
     {
         p2.vy += -p2.force
     }
-    if(keys[`s`])
+    if(keys[`ArrowDown`])
     {
         p2.vy += p2.force
     }
-    if (keys[`e`])
+    if (keys[`w`])
     {
         p1.vy += -p1.force
     }
-    if(keys[`d`])
+    if(keys[`s`])
     {
         p1.vy += p1.force
     }
@@ -91,7 +91,7 @@ function main()
         ball.y = 0
         ball.vy = -ball.vy
     }
-    if (ball.x > 785)
+    if (ball.x > 790)
     {
         ball.x = c.width/2
         ball.y = c.height/2
