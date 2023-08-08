@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <label for="num"></label>
+   <input type="range" id="num" min="0" max="100">
+   <input type="color" id="col">
+   <label for="col">0</label>
+    <script>
+        num.value = 44
+        document.querySelector(`label[for="num"]`).innerHTML = num.value
+
+        num.addEventListener(`input`,show)
+        col.addEventListener(`change`,show)
+        function show(e)
+        {
+            var id =e.target.id
+            document.querySelector(`label[for="${id}"]`).innerHTML = e.target.value;
+        }
+        var add = e => {return 20 + e}//use only in event listeners
+        console.log(add(15))
+      
+    </script>
+</body>
+</html>

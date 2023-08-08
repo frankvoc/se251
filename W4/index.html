@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height: 100px;
+            background-color: green;
+            opacity: 1;
+        }
+    </style>
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <script>
+        var names = [
+            {first:`jay`,last:`bing`},
+            {first:`jimmy`,last:`bong`},
+        ]
+        var div = document.querySelector(`div`);
+
+        var h2 = document.createElement(`h2`);
+        h2.addEventListener(`click`,(e)=>{div.removeChild(e.target)})
+        console.log(h2)
+        div.appendChild(h2)
+        var text =
+        h2.appendChild( document.createTextNode(`hi`))
+    </script>
+
+    <!-- <script>
+        //$(`div`).click(function(){alert(`hi`)})
+        $(`div`)[0].animate({opacity:0},1000,function(){window.location="https://www.neit.edu"})
+    </script> -->
+   <!--  <script>
+        var names =[
+            {first:`jay`,last:`bing`},
+            {first:`jimmy`,last:`bong`},
+        ]
+        var div = document.querySelector(`div`);
+        var message = ` `;
+        for(let i=0;i<name.length;i++)
+        {
+        message += `<h2>`
+            for(let key in names [i])
+            {
+                message += `${names[i][key]}`
+            }
+            
+        message += `</h2>`
+        }
+      
+        div.innerHTML += message;
+        document.querySelector(`h2`).addEventListener(`click`,(e)=>alert(`hi`))
+    </script> -->
+    <!-- <script>
+   
+        var newAdd =(function()
+        {
+            var x = 0
+            return function()
+            {
+                x+=1;
+                return x;
+            }
+        })()
+        var newAdd = add();
+        for(let i=0;i<4;i++)
+        {
+            console.log(newAdd())
+        }
+    </script>
+    <div></div>
+    <script>
+    function $(element){
+        var x = document.querySelectorAll(element);
+        if(x.length>1)
+
+            return x
+        else
+            return document.querySelector(element)
+    }
+    $(`div`).style.opacity = `1`
+    console.log(a)
+    function animate()
+    {
+        console.log(a)
+        a-=.1;
+        $(`div`).style.opacity= String(a);
+        if(a>0)setTimeout(animate,500)
+
+        
+    }
+    animate();
+    
+
+        
+    </script> -->
+</body>
+</html>
