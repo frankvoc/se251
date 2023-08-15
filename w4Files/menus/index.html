@@ -26,9 +26,12 @@
         </section>
         <section class="blank"></section>
     </main>
-    <script src="js/player.js"></script>
+    <script src="js/User.js"></script>
     <script>
-        
+        var p1 = new User();
+        p1.fill = `#ff0000`;
+        console.log(p1);
+        localStorage.setItem(`p1`,JSON.stringify(p1))
     </script>
     <script>
         var menus = document.querySelector(`#menus`);
