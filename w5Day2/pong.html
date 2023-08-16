@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PONG</title>
-    <link rel="stylesheet" href="pong.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pong.css">
 </head>
 <body>
+    <nav><a href="index.html">HOME</a></nav>
     <main>
         <section id="game">
             <div id="score">
@@ -23,8 +25,8 @@
             <canvas id="pong" width="800" height="800"></canvas>
         </section>
         <section id="options"></div>
-            <h2 onclick="hide()">Options</h2>
-            <div id="side" class="sides">
+            <h2>Options</h2>
+            <div class="sides">
                 <div class="op">
                     <h2>Player 1</h2><div></div> <div></div>
                     <label>FILL</label><input class="fill" type="color"><div class="output"></div>
@@ -44,17 +46,11 @@
             </div>
         </section>
     </main>
-    <script>
-        var input = document.querySelector(`input`)
-    </script>
-    
-    <script src="js/Player.js"></script>
+    <script src="js/User.js"></script>
     <script src="js/Box.js"></script>
+    <script src="js/loadplayer.js"></script>
     <script src="js/keyboard.js"></script>
     <script src="js/pong.js"></script>
     <script src="js/options.js"></script>
-    
-        
- 
 </body>
 </html>
