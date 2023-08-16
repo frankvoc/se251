@@ -1,4 +1,4 @@
-class People
+class User
 {
     constructor()
     {
