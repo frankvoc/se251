@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" class="color">
+    <button id="submit">Submit</button>
+    <button id="save">Save</button>
+    <script>
+        var button = document.querySelector(`#submit`);
+        var saveButton = document.querySelector(`#save`);
+        var input = document.querySelector(`input`);
+
+        var obj={color:`pink`}
+        
+
+        button.addEventListener(`click`,(e)=>{
+            console.log(input.value)
+            window.location= `page2.html?color=${input.value.replace('#','%23')}`
+            
+        })
+        saveButton.addEventListener(`click`,(e)=>{
+            obj[input.classList[0]]=input.value;
+            localStorage.setItem(`color`,JSON.stringify(obj));
+            console.log(localStorage)
+        })
+    </script>
+</body>
+</html>

@@ -23,8 +23,8 @@
             <canvas id="pong" width="800" height="800"></canvas>
         </section>
         <section id="options"></div>
-            <h2>Options</h2>
-            <div class="sides">
+            <h2 onclick="hide()">Options</h2>
+            <div id="side" class="sides">
                 <div class="op">
                     <h2>Player 1</h2><div></div> <div></div>
                     <label>FILL</label><input class="fill" type="color"><div class="output"></div>
@@ -44,6 +44,7 @@
             </div>
         </section>
     </main>
+    
     <script src="js/Player.js"></script>
     <script src="js/Box.js"></script>
     <script src="js/keyboard.js"></script>

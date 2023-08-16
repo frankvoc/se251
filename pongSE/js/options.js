@@ -3,6 +3,18 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
+var option = document.getElementById(`side`)
+function hide()
+{
+    if(option.style.display==="none")
+    {
+        option.style.display = "block";
+    }
+    else
+    {
+        option.style.display ="none";
+    }
+}
 
 /*---------
     Program the two fill inputs to do the following:

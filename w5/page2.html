@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        // console.log(location.search)
+        // var urlParam = new URLSearchParams(location.search);
+        // var color = urlParam.get(`color`)
+
+        // document.querySelector(`body`).style.backgroundColor= color;
+        // document.querySelector(`p`).innerHTML = color;
+
+        var obj = JSON.parse(localStorage.getItem(`color`))
+        console.log(obj)
+        if(obj!=null)
+        {
+            document.querySelector(`body`).styleBackgroundColor = obj
+        }
+        
+    </script>
+</body>
+</html>
