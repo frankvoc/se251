@@ -6,7 +6,7 @@ class User
         this.score=0;
         this.highScore=0;
         this.pad;
-        this.fill="hotpink";
+        this.fill="green";
         this.stroke="#ffffff";
         this.h=50;
         this.w=20;
