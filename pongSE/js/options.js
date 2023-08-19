@@ -25,6 +25,46 @@ function hide()
         . Show the fill's hex code in the output div 
 
 -----------*/
+//Updating Paddle Fill
+//selecting elements with class fill and class output.fill to output hex color
+const fillPaddle = document.querySelectorAll('.fill');
+const fillOutputs = document.querySelectorAll('.fill-output');
+
+//function using index of player to change current player color.
+function updatePaddleFill(playerIndex) {
+    //gets color from wheel/input
+  const selectedColor = fillPaddle[playerIndex].value;
+  //updates new player with selected color
+  player[playerIndex].fill = selectedColor;
+  //updates .fill property with seleted color
+  player[playerIndex].pad.fill = selectedColor;
+  //updates fill-output with new hexdecimal color code
+  fillOutputs[playerIndex].textContent = selectedColor;
+}
+fillPaddle.forEach((input, index) => {
+    //waits for color to be changed(input) and calls updatePaddleFill function
+  input.addEventListener('input', (e) => {
+    updatePaddleFill(index);
+  });
+
+  //Updating Paddle Stroke
+
+});
+const strokeInputs = document.querySelectorAll('.stroke');
+const strokeOutputs = document.querySelectorAll('.output.stroke-output');
+
+function updatePaddleStroke(playerIndex) {
+  const selectedColor = strokeInputs[playerIndex].value;
+  player[playerIndex].stroke = selectedColor;
+  player[playerIndex].pad.stroke = selectedColor;
+  strokeOutputs[playerIndex].textContent = selectedColor;
+}
+strokeInputs.forEach((input, index) => {
+  input.addEventListener('input', () => {
+    updatePaddleStroke(index);
+  });
+});
+
 
 /*---------
     Program the six key inputs to do the following:
