@@ -3,6 +3,41 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
+const player1Name = document.getElementById('player1name');
+const player2Name = document.getElementById('player2name');
+//function to get player names
+function setPlayerNames() {
+  const p1Name = prompt('Enter Player 1 Username:');
+  if (p1Name) {
+    player1Name.textContent = p1Name;
+  }
+  console.log(player1Name)
+
+  const p2Name = prompt('Enter player 2 Username:');
+  if (p2Name) {
+    player2Name.textContent = p2Name;
+  }
+}
+onload = setPlayerNames;//prompts user first
+
+//light dark mode btns
+//select dark and light mode buttons
+const lightModeBtn = document.getElementById('lightModeBtn');
+const darkModeBtn = document.getElementById('darkModeBtn');
+//select body
+const body = document.body;
+//click on light button => removes dark-mode css and add light-mode css
+lightModeBtn.addEventListener('click', () => {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+});
+//reverse of light button click
+darkModeBtn.addEventListener('click', () => {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+});
+
+//hide options
 const option = document.getElementById(`side`)
 function hide()
 {
@@ -111,3 +146,4 @@ dInputs.forEach((input, index) => {
     }
   });
 });
+

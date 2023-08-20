@@ -7,6 +7,7 @@
     <title>PONG</title>
     <link rel="stylesheet" href="pong.css">
 </head>
+<script src="https://kit.fontawesome.com/25443a9363.js" crossorigin="anonymous"></script>
 <body>
     <main>
         <section id="game">
@@ -24,9 +25,11 @@
         </section>
         <section id="options"></div>
             <h2 onclick="hide()">Options</h2>
+            <button id="lightModeBtn"><i class="fas fa-sun"></i></button>
+            <button id="darkModeBtn"><i class="fas fa-moon"></i></button>
             <div id="side" class="sides">
                 <div class="op">
-                    <h2>Player 1</h2><div></div> <div></div>
+                    <h2 id="player1name">Player 1</h2><div></div> <div></div>
                     <div class="fill-output"></div>
                     <label>FILL</label><input class="fill" type="color"><div class="output"></div>
                     <label>STROKE</label><input id="stroke-input-0" class="stroke" type="color"><div id="stroke-output-0" class="output stroke-output"></div>
@@ -35,7 +38,7 @@
                     <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
                 </div>
                 <div class="op">
-                    <h2>Player 2</h2> <div></div><div class="output"></div>
+                    <h2 id="player2name">Player 2</h2> <div></div><div class="output"></div>
                     <div class="fill-output"></div>
                     <label>FILL</label><input class="fill" type="color"><div class="output"></div>
                     <label>STROKE</label><input id="stroke-input-1" class="stroke" type="color"><div id="stroke-output-1" class="output stroke-output"></div>
