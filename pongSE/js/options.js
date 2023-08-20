@@ -3,7 +3,7 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
-var option = document.getElementById(`side`)
+const option = document.getElementById(`side`)
 function hide()
 {
     if(option.style.display==="none")
@@ -74,3 +74,40 @@ strokeInputs.forEach((input, index) => {
         .Change the player's key to the value of the input
         .Show the player's key in the output div 
 -----------*/
+//selects all inputs with u class
+const uInputs = document.querySelectorAll('.u');
+uInputs.forEach((input, index) => { //goes through each of the up inputs we selected
+  input.value = player[index].keys.u; //sets value of the Up key to current player index
+  input.addEventListener('keydown', (e) => { 
+    input.value = e.key;
+    e.preventDefault();
+
+    //updates new player index key press
+    player[index].keys.u = e.key.toLowerCase(); //changes input to lowercase
+    const output = input.nextElementSibling.nextElementSibling.nextElementSibling; //changes current div output
+    output.textContent = player[index].keys.u;  //updates div
+  });
+  //pause fuinctionality
+  input.addEventListener('focus', () => {
+    if (currentState !== 'pause') {
+      currentState = 'pause';//pauses game
+    }
+  });
+});
+//same logic for down
+const dInputs = document.querySelectorAll('.d');
+dInputs.forEach((input, index) => {
+  input.value = player[index].keys.d;
+  input.addEventListener('keydown', (e) => {
+    input.value = e.key; 
+    e.preventDefault(); 
+    player[index].keys.d = e.key.toLowerCase();
+    const output = input.nextElementSibling.nextElementSibling.nextElementSibling; 
+    output.textContent = player[index].keys.d;
+  });
+  input.addEventListener('focus', () => {
+    if (currentState !== 'pause') {
+      currentState = 'pause';
+    }
+  });
+});
