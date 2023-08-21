@@ -65,15 +65,15 @@ function hide()
 var fillPaddle = document.querySelectorAll('.fill');
 var fillOutputs = document.querySelectorAll('.fill-output');
 //function using index of player to change current player color.
-function updatePaddleFill(playerIndex) {
+function updatePaddleFill(i) {
     //gets color from wheel/input
-  var selectedColor = fillPaddle[playerIndex].value;
+  var selectedColor = fillPaddle[i].value;
   //updates new player with selected color
-  player[playerIndex].fill = selectedColor;
+  player[i].fill = selectedColor;
   //updates .fill property with seleted color
-  player[playerIndex].pad.fill = selectedColor;
+  player[i].pad.fill = selectedColor;
   //updates fill-output with new hexdecimal color code
-  fillOutputs[playerIndex].textContent = selectedColor;
+  fillOutputs[i].textContent = selectedColor;
 }
 fillPaddle.forEach((input, index) => {
     //waits for color to be changed(input) and calls updatePaddleFill function
@@ -87,11 +87,11 @@ fillPaddle.forEach((input, index) => {
 var strokeInputs = document.querySelectorAll('.stroke');
 var strokeOutputs = document.querySelectorAll('.output.stroke-output');
 
-function updatePaddleStroke(playerIndex) {
-  var selectedColor = strokeInputs[playerIndex].value;
-  player[playerIndex].stroke = selectedColor;
-  player[playerIndex].pad.stroke = selectedColor;
-  strokeOutputs[playerIndex].textContent = selectedColor;
+function updatePaddleStroke(i) {
+  var selectedColor = strokeInputs[i].value;
+  player[i].stroke = selectedColor;
+  player[i].pad.stroke = selectedColor;
+  strokeOutputs[i].textContent = selectedColor;
 }
 strokeInputs.forEach((input, index) => {
   input.addEventListener('input', () => {
