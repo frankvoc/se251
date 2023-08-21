@@ -3,17 +3,17 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
-const player1Name = document.getElementById('player1name');
-const player2Name = document.getElementById('player2name');
+var player1Name = document.getElementById('player1name');
+var player2Name = document.getElementById('player2name');
 //function to get player names
 function setPlayerNames() {
-  const p1Name = prompt('Enter Player 1 Username:');
+  var p1Name = prompt('Enter Player 1 Username:');
   if (p1Name) {
     player1Name.textContent = p1Name;
   }
   console.log(player1Name)
 
-  const p2Name = prompt('Enter player 2 Username:');
+  var p2Name = prompt('Enter player 2 Username:');
   if (p2Name) {
     player2Name.textContent = p2Name;
   }
@@ -22,10 +22,10 @@ onload = setPlayerNames;//prompts user first
 
 //light dark mode btns
 //select dark and light mode buttons
-const lightModeBtn = document.getElementById('lightModeBtn');
-const darkModeBtn = document.getElementById('darkModeBtn');
+var lightModeBtn = document.getElementById('lightModeBtn');
+var darkModeBtn = document.getElementById('darkModeBtn');
 //select body
-const body = document.body;
+var body = document.body;
 //click on light button => removes dark-mode css and add light-mode css
 lightModeBtn.addEventListener('click', () => {
     body.classList.remove('dark-mode');
@@ -38,7 +38,7 @@ darkModeBtn.addEventListener('click', () => {
 });
 
 //hide options
-const option = document.getElementById(`side`)
+var option = document.getElementById(`side`)
 function hide()
 {
     if(option.style.display==="none")
@@ -62,13 +62,12 @@ function hide()
 -----------*/
 //Updating Paddle Fill
 //selecting elements with class fill and class output.fill to output hex color
-const fillPaddle = document.querySelectorAll('.fill');
-const fillOutputs = document.querySelectorAll('.fill-output');
-
+var fillPaddle = document.querySelectorAll('.fill');
+var fillOutputs = document.querySelectorAll('.fill-output');
 //function using index of player to change current player color.
 function updatePaddleFill(playerIndex) {
     //gets color from wheel/input
-  const selectedColor = fillPaddle[playerIndex].value;
+  var selectedColor = fillPaddle[playerIndex].value;
   //updates new player with selected color
   player[playerIndex].fill = selectedColor;
   //updates .fill property with seleted color
@@ -85,11 +84,11 @@ fillPaddle.forEach((input, index) => {
   //Updating Paddle Stroke
 
 });
-const strokeInputs = document.querySelectorAll('.stroke');
-const strokeOutputs = document.querySelectorAll('.output.stroke-output');
+var strokeInputs = document.querySelectorAll('.stroke');
+var strokeOutputs = document.querySelectorAll('.output.stroke-output');
 
 function updatePaddleStroke(playerIndex) {
-  const selectedColor = strokeInputs[playerIndex].value;
+  var selectedColor = strokeInputs[playerIndex].value;
   player[playerIndex].stroke = selectedColor;
   player[playerIndex].pad.stroke = selectedColor;
   strokeOutputs[playerIndex].textContent = selectedColor;
@@ -110,17 +109,17 @@ strokeInputs.forEach((input, index) => {
         .Show the player's key in the output div 
 -----------*/
 //selects all inputs with u class
-const uInputs = document.querySelectorAll('.u');
-uInputs.forEach((input, index) => { //goes through each of the up inputs we selected
-  input.value = player[index].keys.u; //sets value of the Up key to current player index
+var uInputs = document.querySelectorAll('.u');
+uInputs.forEach((input, i)=> { //goes through each of the up inputs we selected
+  input.value = player[i].keys.u; //sets value of the Up key to current player index
   input.addEventListener('keydown', (e) => { 
     input.value = e.key;
     e.preventDefault();
 
     //updates new player index key press
-    player[index].keys.u = e.key.toLowerCase(); //changes input to lowercase
-    const output = input.nextElementSibling.nextElementSibling.nextElementSibling; //changes current div output
-    output.textContent = player[index].keys.u;  //updates div
+    player[i].keys.u = e.key.toLowerCase(); //changes input to lowercase
+    var output = input.nextElementSibling.nextElementSibling.nextElementSibling; //changes current div output
+    output.textContent = player[i].keys.u;  //updates div
   });
   //pause fuinctionality
   input.addEventListener('focus', () => {
@@ -130,15 +129,15 @@ uInputs.forEach((input, index) => { //goes through each of the up inputs we sele
   });
 });
 //same logic for down
-const dInputs = document.querySelectorAll('.d');
-dInputs.forEach((input, index) => {
-  input.value = player[index].keys.d;
+var dInputs = document.querySelectorAll('.d');
+dInputs.forEach((input, i) => {
+  input.value = player[i].keys.d;
   input.addEventListener('keydown', (e) => {
     input.value = e.key; 
     e.preventDefault(); 
-    player[index].keys.d = e.key.toLowerCase();
-    const output = input.nextElementSibling.nextElementSibling.nextElementSibling; 
-    output.textContent = player[index].keys.d;
+    player[i].keys.d = e.key.toLowerCase();
+    var output = input.nextElementSibling.nextElementSibling.nextElementSibling; 
+    output.textContent = player[i].keys.d;
   });
   input.addEventListener('focus', () => {
     if (currentState !== 'pause') {
