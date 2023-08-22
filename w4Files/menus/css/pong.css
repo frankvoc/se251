@@ -34,3 +34,20 @@ canvas{
     display:grid;
     grid-template-columns: auto auto auto; 
 }
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode canvas {
+    border-color: #222222; 
+}
+
+body.light-mode #game p, body.light-mode #options, body.light-mode .op {
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}

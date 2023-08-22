@@ -9,50 +9,59 @@
     <link rel="stylesheet" href="css/pong.css">
 </head>
 <body>
-    <!-- <nav><a href="index.html">HOME</a></nav>
+    <nav><a href="index.html">HOME</a></nav>
     <link rel="stylesheet" href="pong.css">
 </head>
 <body>
-    <main>
-        <section id="game">
-            <div id="score">
-                <div>
-                    <p class="score">0</p>
-                    p class="anim">0</p>
+    <script src="https://kit.fontawesome.com/25443a9363.js" crossorigin="anonymous"></script>
+    <body>
+        <main>
+            <section id="game">
+                <div id="score">
+                    <div>
+                        <p class="score">0</p>
+                        <!--<p class="anim">0</p>-->
+                    </div>
+                    <div>
+                        <p class="score">0</p>
+                        <!--<p class="anim">0</p>-->
+                    </div>
                 </div>
-                <div>
-                    <p class="score">0</p>
-                    <<p class="anim">0</p>
+                <canvas id="pong" width="800" height="800"></canvas>
+            </section>
+            <section id="options"></div>
+                <h2 onclick="hide()">Options</h2>
+                <button id="lightModeBtn"><i class="fas fa-sun"></i></button>
+                <button id="darkModeBtn"><i class="fas fa-moon"></i></button>
+                <div id="side" class="sides">
+                    <div class="op">
+                        <h2 id="player1name">Player 1</h2><div></div> <div></div>
+                        <div class="fill-output"></div>
+                        <label>FILL</label><input class="fill" type="color"><div class="output"></div>
+                        <label>STROKE</label><input id="stroke-input-0" class="stroke" type="color"><div id="stroke-output-0" class="output stroke-output"></div>
+                        <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
+                        <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
+                        <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
+                    </div>
+                    <div class="op">
+                        <h2 id="player2name">Player 2</h2> <div></div><div class="output"></div>
+                        <div class="fill-output"></div>
+                        <label>FILL</label><input class="fill" type="color"><div class="output"></div>
+                        <label>STROKE</label><input id="stroke-input-1" class="stroke" type="color"><div id="stroke-output-1" class="output stroke-output"></div>
+                        <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
+                        <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
+                        <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
+                    </div>
                 </div>
-            </div>
-            <canvas id="pong" width="800" height="800"></canvas>
-        </section>
-        <section id="options"></div>
-            <h2>Options</h2>
-            <div class="sides">
-                <div class="op">
-                    <h2>Player 1</h2><div></div> <div></div>
-                    <label>FILL</label><input class="fill" type="color"><div class="output"></div>
-                    <label>STROKE</label><input class="stroke" type="color"><div class="output"></div>
-                    <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
-                    <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
-                    <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
-                </div>
-                <div class="op">
-                    <h2>Player 2</h2> <div></div><div class="output"></div>
-                    <label>FILL</label><input class="fill" type="color"><div class="output"></div>
-                    <label>STROKE</label><input class="stroke" type="color"><div class="output"></div>
-                    <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
-                    <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
-                    <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+        <script>
+            var input = document.querySelector(`input`)
+        </script>
     <script src="js/User.js"></script>
     <script src="js/Box.js"></script>
     <script src="js/keyboard.js"></script>
     <script src="js/pong.js"></script>
     <script src="js/options.js"></script>
-</body> -->
+</body>
 </html>
