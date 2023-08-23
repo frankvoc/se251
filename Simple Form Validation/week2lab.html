@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 2 Lab</title>
+<link type="text/css" rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="week2.js"></script>
+<style>
+    .error{
+        color:red;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="form">
+	
+    <form name="info">
+    <p id="fname-error">
+    First Name <br />
+    <input placeholder="John" type="text" id="first-name" /> <span id="fn-error" class="error"> </span>
+    </p>
+    
+    <p>
+   	Last Name <br />
+    <input placeholder="Doe" type="text" id="last-name"/> <span class="error" id="ln-error"> </span>
+    </p>
+    
+    <p>
+   	Email <br />
+    <input placeholder="example@email.com" type="text" id="email"/> <span id="email-error" class="error"> </span>
+    </p>
+    
+    <p>
+   	Phone Number <br />
+    <input placeholder="4019831234" type="text" id="phone"/> <span id="phone-error" class="error"> </span>
+    </p>
+    
+    <input type="button" value="submit" onclick="validateForm()" />
+    </form>
+
+</div>
+
+<div id="confirmation">
+	<h1>Confirmation</h1>
+    <p id="info">
+    </p>
+</div>
+
+
+</body>
+</html>
