@@ -58,8 +58,7 @@ function validateForm() {
         phoneError.innerHTML=('');
     }
     else{
-        phoneError.textContent = " * Invalid Phone #";
-        phoneError.innerHTML = (spanerror.color = 'red')
+        phoneError.innerHTML = (spanerror.color = '* Invalid Phone #')
         console.log('Invalid')
     }
 }
