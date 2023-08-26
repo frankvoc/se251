@@ -15,35 +15,46 @@
         <section class="blank"></section>
         <section id="content">
             <div id="menus">
-            <!--This is what your final HMTL will look like.-->
-            <div id="start-options">
-                <div><button id="newGameButton" data-load="false">New Game</button> <!-- Will redirect to lobby.html and send load=false --></div>
-                <div><button id="continueButton" data-load="true">Continue</button> <!-- Will redirect to lobby.html and send load=true --></div>
-                <button id="highScoresButton">High Scores</button> <!-- Will redirect to hs.html -->
-            </div>
-            
+                <div id="start-options">
+                    <button id="startButton">Start</button> <!-- New "Start" button -->
+                    <div id="optionsButtons" style="display: none;">
+                        <div><button id="newGameButton" data-load="false">New Game</button></div>
+                        <div><button id="continueButton" data-load="true">Continue</button></div>
+                        <button id="highScoresButton">High Scores</button>
+                    </div>
+                </div>
             </div>
         </section>
         <script>
+            
             document.addEventListener('DOMContentLoaded', () => {
+                const startButton = document.getElementById('startButton');
+                const optionsButtons = document.getElementById('optionsButtons');
+
+                startButton.addEventListener('click', () => {
+                    startButton.style.display = 'none'; // Hide the start button
+                    optionsButtons.style.display = 'flex'; // Show the options buttons
+                });
+
                 const newGameButton = document.getElementById('newGameButton');
                 const continueButton = document.getElementById('continueButton');
                 const highScoresButton = document.getElementById('highScoresButton');
-    
+
                 newGameButton.addEventListener('click', () => {
                     const load = newGameButton.getAttribute('data-load');
                     window.location.href = `lobby.html?load=${load}`;
                 });
-    
+
                 continueButton.addEventListener('click', () => {
                     const load = continueButton.getAttribute('data-load');
                     window.location.href = `lobby.html?load=${load}`;
                 });
-    
+
                 highScoresButton.addEventListener('click', () => {
                     window.location.href = 'hs.html';
                 });
             });
+            
         </script>
         <section class="blank"></section>
     </main>
@@ -52,10 +63,7 @@
         var p1 = new User();
         p1.fill = `#ff0000`;
         console.log(p1);
-        localStorage.setItem(`p1`,JSON.stringify(p1))
-    </script>
-
-
+        localStorage.setItem(`p1`, JSON.stringify(p1));
     </script>
 </body>
 </html>
