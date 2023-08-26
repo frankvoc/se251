@@ -40,7 +40,10 @@
     <script>
         var urlParams = new URLSearchParams(window.location.search);
         console.log(urlParams.get(`load`))
-        
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("load");
+
+        alert(name);
         var p1;
         if(urlParams.get(`load`)==="true")
         {
