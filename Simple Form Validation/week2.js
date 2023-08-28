@@ -1,4 +1,4 @@
-// JavaScript Document
+//JavaScript Document
 function validateFirstName(fname) {
     var pattern = /^[A-Za-z\-]+$/;
     return pattern.test(fname);
@@ -27,7 +27,7 @@ function validateForm() {
     var spanerror = document.querySelector(`span`);
 
     if (validateFirstName(firstNameInput.value)) {
-        fnErrorSpan.textContent = ""; // Clear error message
+        fnErrorSpan.textContent = "";
         console.log("First name is valid.");
         fnErrorSpan.innerHTML = ('')
     } else {
@@ -35,7 +35,7 @@ function validateForm() {
         console.log("Invalid first name.");
     }
     if (validateLastName(lastNameInput.value)) {
-        lnErrorSpan.textContent = ""; // Clear error message
+        lnErrorSpan.textContent = "";
         console.log("First name is valid.");
         lnErrorSpan.innerHTML = ('')
     } 
