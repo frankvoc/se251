@@ -92,6 +92,5 @@ function confirmation(person){
     confirmInfo.innerHTML = `
     <p>${person.firstName} ${person.lastName}</p>
     <p>${person.email}</p>
-    <p>${formatPhoneNumber(person.phone)}</p>
-`;
+    <p>${formatPhoneNumber(person.phone)}</p>`;
 }
