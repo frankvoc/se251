@@ -12,7 +12,8 @@ function validateEmail(email){
     return pattern.test(email)
 }
 function validatePhoneNumber(phoneNumber) {
-    var pattern = /^(?:\+\d{1,3})?(?:\s?\(\d{1,4}\)\s?|\s?\d{1,4}[-\s]?)?\d{6,}$/;
+    var pattern = /^\d{10}$/;
+
     return pattern.test(phoneNumber);
 }
 function validateForm() {
@@ -22,45 +23,75 @@ function validateForm() {
     var lnErrorSpan = document.getElementById("ln-error");
     var emailInput = document.getElementById("email");
     var emailError = document.getElementById('email-error');
+    var confirmEmailInput = document.getElementById("confirm-email");
+    var confirmEmailError = document.getElementById("confirm-email-error");
     var phoneInput = document.getElementById('phone');
     var phoneError = document.getElementById('phone-error')
     var spanerror = document.querySelector(`span`);
 
-    if (validateFirstName(firstNameInput.value)) {
-        fnErrorSpan.textContent = "";
-        console.log("First name is valid.");
-        fnErrorSpan.innerHTML = ('')
+    var valid = true;
+
+    if (!validateFirstName(firstNameInput.value)) {
+        fnErrorSpan.innerHTML = (spanerror.style.color='* Invalid First Name');
+        valid = false;
     } else {
-        fnErrorSpan.innerHTML = (spanerror.textContent.color='* Invalid First Name')
-        console.log("Invalid first name.");
+        fnErrorSpan.textContent = "";
     }
-    if (validateLastName(lastNameInput.value)) {
+
+    if (!validateLastName(lastNameInput.value)) {
+        lnErrorSpan.innerHTML = (spanerror.style.color='* Invalid');
+        valid = false;
+    } else {
         lnErrorSpan.textContent = "";
-        console.log("First name is valid.");
-        lnErrorSpan.innerHTML = ('')
-    } 
-    else {
-        lnErrorSpan.innerHTML = (spanerror.style.color='* Invalid')
-        console.log("Invalid first name.");
     }
-    if (validateEmail(emailInput.value)){
+
+    if (!validateEmail(emailInput.value)) {
+        emailError.innerHTML = (spanerror.style.color = '* Invalid Email');
+        valid = false;
+    } else {
         emailError.textContent = "";
-        console.log('Email is valid');
-        emailError.innerHTML = ('')
     }
-    else{
-        emailError.innerHTML = (spanerror.style.color = '*  Invalid Email')
-        console.log('invalid email')
+
+    if (emailInput.value !== confirmEmailInput.value) {
+        confirmEmailError.textContent = "* Email confirmation does not match";
+        valid = false;
+    } else {
+        confirmEmailError.textContent = "";
     }
-    if(validatePhoneNumber(phoneInput.value)){
+
+    if (!validatePhoneNumber(phoneInput.value)) {
+        phoneError.innerHTML = (spanerror.color = '* Invalid Phone #');
+        valid = false;
+    } else {
         phoneError.textContent = "";
-        console.log('Phone # is Valid');
-        phoneError.innerHTML=('');
     }
-    else{
-        phoneError.innerHTML = (spanerror.color = '* Invalid Phone #')
-        console.log('Invalid')
+
+    if (valid) {
+        var person = {
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value,
+            email: emailInput.value,
+            phone: phoneInput.value
+        };
+        confirmation(person);
+        document.getElementById("form").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
     }
 }
 
+function formatPhoneNumber(phone) {
+    if (phone.length === 10) {
+        return phone.substring(0, 3) + '-' + phone.substring(3, 6) + '-' + phone.substring(6);
+    } else {
+        return phone;
+    }
+}
 
+function confirmation(person){
+    var confirmInfo = document.getElementById("info");
+    confirmInfo.innerHTML = `
+    <p>${person.firstName} ${person.lastName}</p>
+    <p>${person.email}</p>
+    <p>${formatPhoneNumber(person.phone)}</p>
+`;
+}
