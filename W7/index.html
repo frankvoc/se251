@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Get Data</button>
+    <p></p>
+    <script>
+        let p = document.querySelector(`p`);
+       /*  let promise = new Promise((resolve, reject)=>{
+            //resolve('hi')
+            reject('Uh oh');
+        })
+        promise.then((poop)=>{alert(poop)})
+        .catch((har)=>alert(hair))
+        .finally(()=>('Bye')) */
+
+        /* function delay(ms)
+        {
+            return new Promise(resolve=> setTimeout
+            (resolve,ms));
+        }
+
+        async function somefunc()
+        {
+            await delay(2000);
+            await setTimeout(()=>{p.innerHTML+=1;},2000)
+            await setTimeout(()=>{p.innerHTML+=2;},1000)
+        } */
+
+       /*  async function doit()
+        {
+            await setTimeout(()=>{p.innerHTML+=1;},2000)
+            await setTimeout(()=>{p.innerHTML+=2;},1000)
+        } */
+
+    async function logMovies() {
+        var icon = document.createElement(`img`);
+        icon.setAttribute(`src`,`images/load.gif`)
+        p.appendChild(icon)
+        const response = await fetch("https://swapi.dev/api/people/1/");
+        const movies = await response.json();
+        var message
+        for(let i in movies)
+        {
+            message += `<p>${movies[i]}</p>`
+        }
+        p.removeChild(icon)
+        p.innerHTML+= message
+        console.log(movies)
+        window.open(`https://www.google.com/search?q=chatgpt`)
+    }
+    document.querySelector(`button`)
+    .addEventListener(`click` , logMovies)
+    //logMovies().then((data)=>console.log(data))
+    </script>
+</body>
+</html>
