@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <form>
+        <input type="text" name="Make"><br>
+        <input type="text" name="Model"><br>
+        <input type="number" name="Year" maxlength="4"><br>
+        <button>submit</button>
+    </form>
+    <div id="output">
+        
+    </div>
+    <script>
+        window.addEventListener(`load`, load)
+         async function load(e){
+            var promise = await fetch("http://localhost:80/jeep")
+            var data = await promise.json(data)
+            let sortedData = data.sort((a,b)=>(b.Year - a.Year));
+            console.log(data)
+            var output= document.querySelector(`#output`);
+            var message ='';
+            for(let i=0; i<data.length;i++)
+            {
+                message+= `<div>`
+                    for(let prop in data[i])
+                    {
+                        message+= `<li>${prop}: ${data[i] [prop]} </li>`
+                    }
+                message+= `<button id="delete">Delete</button>`    
+                message+= `</div>`
+                var DataIndex = document.querySelector('.item button')
+                
+            }
+            output.innerHTML= message
+            
+
+        }
+        document.querySelector(`button`).addEventListener(`click`,(e)=>{
+            fetch("http://localhost:80/jeep", {
+            
+            // Adding method type
+                method: "POST",
+            
+            // Adding body or contents to send
+                body: JSON.stringify({
+                    Make: document.querySelector(`input[name="Make"]`).value,
+                    Model: document.querySelector(`input[name="Model"]`).value,
+                    Year: document.querySelector(`input[name="Year"]`).value,
+                }),
+            
+            // Adding headers to the request
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            load();
+        })
+       
+    </script>
+</body>
+</html>
