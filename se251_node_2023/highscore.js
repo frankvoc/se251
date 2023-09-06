@@ -6,12 +6,11 @@ app.set('view engine', 'hbs');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+const path = require(`path`);
 app.use(express.static(__dirname + '/public'));
 app.get('/favicon.ico', (req, res) => res.status(204));
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
 
-
-const userPath = `./data/users.json`;
 
 const readFile = (path)=>{
   return new Promise(
@@ -30,8 +29,13 @@ const readFile = (path)=>{
 }
 
 app.get(`/`, (req, res) => {
-  res.sendfile(`index.html`);
+  res.sendFile(`index.html`);
 });
+
+app.get(`/add`, (req, res)=>{
+  const filePath = path.join(__dirname,'public','testForm.html')
+  res.sendFile(filePath)
+})
 
 app.get('/jeep', async (req, res) => {
   var data = await readFile(`./data/jeep.json`);
